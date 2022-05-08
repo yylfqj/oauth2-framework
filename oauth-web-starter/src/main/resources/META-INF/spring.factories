@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    oauth.web.starter.autoconfigure.WebConfig

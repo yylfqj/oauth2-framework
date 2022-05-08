@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.oauth</groupId>
+    <artifactId>oauth-dependencies</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <description>oauth dependencies pom</description>
+
+    <repositories>
+        <!--私服仓库-->
+        <repository>
+            <id>hznexus-releases</id>
+            <name>Nexus repository</name>
+            <url>http://t.cngongbao.com:10003/repository/maven-public</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>hznexus-releases</id>
+            <url>http://t.cngongbao.com:10003/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>hznexus-snapshots</id>
+            <url>http://t.cngongbao.com:10003/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
+        <oauth-web-starter.version>1.0.0</oauth-web-starter.version>
+        <oauth-cache-starter.version>1.0.0</oauth-cache-starter.version>
+        <oauth-feign-starter.version>1.0.0</oauth-feign-starter.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 整合spring-boot-web 并且自定义一些配置 -->
+            <dependency>
+                <groupId>org.oauth</groupId>
+                <artifactId>oauth-web-starter</artifactId>
+                <version>${oauth-web-starter.version}</version>
+            </dependency>
+            <!-- 自定义统一缓存包 -->
+            <dependency>
+                <groupId>org.oauth</groupId>
+                <artifactId>oauth-cache-starter</artifactId>
+                <version>${oauth-cache-starter.version}</version>
+            </dependency>
+            <!-- 自定义feign处理包 -->
+            <dependency>
+                <groupId>org.oauth</groupId>
+                <artifactId>oauth-feign-starter</artifactId>
+                <version>${oauth-feign-starter.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

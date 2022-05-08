@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    oauth.cache.starter.autoconfigure.CacheAutoConfiguration, \
+    oauth.cache.starter.autoconfigure.RedisAutoConfiguration
