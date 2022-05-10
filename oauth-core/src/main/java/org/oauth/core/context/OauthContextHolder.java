@@ -19,7 +19,7 @@ public class OauthContextHolder {
 
     public static void set(String key, Object value) {
         Map<String, Object> map = getLocalMap();
-        map.put(key, value == null ? "" : value);
+        map.put(key, value);
     }
 
     public static <T> T get(String key, Class<T> type) {
@@ -27,14 +27,9 @@ public class OauthContextHolder {
         return Convert.convert(type, map.get(key));
     }
 
-    public static <T> T get(String key, Class<T> type, Object def) {
-        Map<String, Object> map = getLocalMap();
-        return Convert.convert(type, map.getOrDefault(key, String.valueOf(def == null ? "" : def)));
-    }
-
     public static String get(String key) {
         Map<String, Object> map = getLocalMap();
-        return Convert.toStr(map.getOrDefault(key, ""));
+        return Convert.toStr(map.getOrDefault(key, null));
     }
 
     public static Map<String, Object> getLocalMap() {
