@@ -1,6 +1,5 @@
 package oauth.feign.starter.properties;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
@@ -13,19 +12,36 @@ import java.util.List;
  * @Description FeignProperties
  * @Version 1.0
  */
-@Data
 @ConfigurationProperties("custom.feign")
 public class FeignProperties {
 
     /**
-     * 是否开启指定feign配置
+     * 是否开启自定义feign配置
      */
     private boolean enabled = true;
 
     @NestedConfigurationProperty
     private FeignHeader headers = new FeignHeader();
 
-    @Data
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public FeignHeader getHeaders() {
+        return headers;
+    }
+
+    public void setHeaders(FeignHeader headers) {
+        this.headers = headers;
+    }
+
+    /**
+     * feign的header处理
+     */
     public static class FeignHeader {
 
         /**
@@ -37,6 +53,22 @@ public class FeignProperties {
          * 需要传播的header头
          */
         private List<String> transfer;
+
+        public boolean isEnabled() {
+            return enabled;
+        }
+
+        public void setEnabled(boolean enabled) {
+            this.enabled = enabled;
+        }
+
+        public List<String> getTransfer() {
+            return transfer;
+        }
+
+        public void setTransfer(List<String> transfer) {
+            this.transfer = transfer;
+        }
     }
 
 }
