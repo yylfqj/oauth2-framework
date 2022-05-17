@@ -11,6 +11,15 @@
 
     <artifactId>oauth-web-starter</artifactId>
 
+    <repositories>
+        <!--私服仓库-->
+        <repository>
+            <id>hznexus-releases</id>
+            <name>Nexus repository</name>
+            <url>http://t.cngongbao.com:10003/repository/maven-public</url>
+        </repository>
+    </repositories>
+
     <dependencies>
 
         <!-- oauth核心工具包 -->
@@ -23,6 +32,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
 
     </dependencies>

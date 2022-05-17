@@ -40,6 +40,7 @@
         <oauth-web-starter.version>1.0.0</oauth-web-starter.version>
         <oauth-cache-starter.version>1.0.0</oauth-cache-starter.version>
         <oauth-feign-starter.version>1.0.0</oauth-feign-starter.version>
+        <oauth-swagger-starter.version>1.0.0</oauth-swagger-starter.version>
     </properties>
 
     <dependencyManagement>
@@ -61,6 +62,12 @@
                 <groupId>org.oauth</groupId>
                 <artifactId>oauth-feign-starter</artifactId>
                 <version>${oauth-feign-starter.version}</version>
+            </dependency>
+            <!-- 自定义swagger文档包 -->
+            <dependency>
+                <groupId>org.oauth</groupId>
+                <artifactId>oauth-swagger-starter</artifactId>
+                <version>${oauth-swagger-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
