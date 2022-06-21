@@ -37,4 +37,8 @@ public class ServiceException extends BaseException{
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "ServiceException [message=" + getMessage() + ", code=" + getCode() + "]";
+    }
 }
